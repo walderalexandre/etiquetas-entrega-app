@@ -39,10 +39,6 @@ php artisan migrate --seed
 npm install
 npm run dev
 
-Configuração Adicional
-DomPDF (para PDFs):
-composer require barryvdh/laravel-dompdf
-
 Estrutura do Projeto (DDD)
 app/
 └── Domain/
@@ -74,11 +70,9 @@ GET    /api/transportadoras          Listar transportadoras
 POST   /api/transportadoras          Criar transportadora
 GET    /api/etiquetas                Listar etiquetas
 POST   /api/etiquetas                Criar etiqueta
-GET    /api/etiquetas/{id}/imprimir  Gerar PDF
 
 Dependências Principais
 - Laravel 10
-- DomPDF
 - PHPUnit
 - Guzzle
 
@@ -93,5 +87,5 @@ Licença
 MIT - veja LICENSE
 
 Contato
-Desenvolvedor - [Seu Nome] - seu-email@exemplo.com
-Repositório: https://github.com/seu-usuario/sistema-etiquetas
+Desenvolvedor - [Walder Silva] - walderalexandre@gmail.com
+Repositório: https://github.com/walderalexandre/etiquetas-entrega-app
