@@ -22,7 +22,6 @@ class EloquentEtiquetaRepository implements EtiquetaRepositoryInterface
 
     public function criar(array $dados): Etiqueta
     {
-        $dados['codigo_rastreio'] = $this->gerarCodigoRastreio();
         return Etiqueta::create($dados);
     }
 
@@ -34,10 +33,5 @@ class EloquentEtiquetaRepository implements EtiquetaRepositoryInterface
     public function deletar(string $id): bool
     {
         return Etiqueta::destroy($id) > 0;
-    }
-
-    public function gerarCodigoRastreio(): string
-    {
-        return 'ETQ' . Str::upper(Str::random(3)) . now()->format('YmdHis');
     }
 }

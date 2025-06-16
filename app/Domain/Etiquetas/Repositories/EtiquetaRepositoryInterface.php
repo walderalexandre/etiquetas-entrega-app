@@ -11,5 +11,4 @@ interface EtiquetaRepositoryInterface
     public function criar(array $dados): Etiqueta;
     public function atualizar(string $id, array $dados): bool;
     public function deletar(string $id): bool;
-    public function gerarCodigoRastreio(): string;
 }

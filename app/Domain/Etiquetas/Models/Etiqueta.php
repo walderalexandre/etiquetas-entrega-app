@@ -21,7 +21,6 @@ class Etiqueta extends Model
         'transportadora_id',
         'pedido_id',
         'data_envio',
-        'codigo_rastreio'
     ];
 
     protected $casts = [
