@@ -4,6 +4,7 @@ namespace App\Domain\Pedidos\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Pedido extends Model
 {
@@ -32,5 +33,16 @@ class Pedido extends Model
     public function vendedor()
     {
         return $this->belongsTo(\App\Domain\Vendedores\Models\Vendedor::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (empty($model->id)) {
+                $model->id = (string) Str::uuid();
+            }
+        });
     }
 }

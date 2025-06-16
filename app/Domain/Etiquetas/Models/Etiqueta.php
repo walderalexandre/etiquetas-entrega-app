@@ -4,6 +4,7 @@ namespace App\Domain\Etiquetas\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Etiqueta extends Model
 {
@@ -44,5 +45,16 @@ class Etiqueta extends Model
     public function pedido()
     {
         return $this->belongsTo(\App\Domain\Pedidos\Models\Pedido::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (empty($model->id)) {
+                $model->id = (string) Str::uuid();
+            }
+        });
     }
 }
