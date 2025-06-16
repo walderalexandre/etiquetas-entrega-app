@@ -55,7 +55,7 @@ php artisan serve
 http://localhost:8000
 
 3. API Endpoints:
-- Consulte a coleção Postman fornecida
+- Consulte a coleção Postman fornecida em docs/postman/
 
 Testes
 php artisan test
@@ -82,9 +82,6 @@ Contribuição
 3. Commit suas mudanças
 4. Push para a branch
 5. Abra um Pull Request
-
-Licença
-MIT - veja LICENSE
 
 Contato
 Desenvolvedor - [Walder Silva] - walderalexandre@gmail.com
