@@ -2,26 +2,21 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class ApiRouteServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     */
-    public function register(): void
+    public function boot()
     {
-        //
+        $this->configureRoutes();
     }
 
-    /**
-     * Bootstrap services.
-     */
-    public function boot(): void
+    protected function configureRoutes()
     {
         Route::prefix('api')
-         ->middleware('api')
-         ->group(base_path('routes/api.php'));
+            ->middleware('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
     }
 }
